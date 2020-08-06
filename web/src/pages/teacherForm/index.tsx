@@ -5,7 +5,7 @@ import warningIcon from '../../assets/images/icons/warning.svg'
 
 import './style.css'
 import Input from '../../components/input';
-import Textarea from '../../components/TextArea';
+import Textarea from '../../components/textArea';
 import Select from '../../components/select';
 
 function TeacherForm () {
