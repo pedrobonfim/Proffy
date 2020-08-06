@@ -5,14 +5,37 @@ import PageHeader from '../../components/pageHeader'
 import './style.css'
 import TeacherItem from '../../components/teacherItem'
 import Input from '../../components/input'
+import Select from '../../components/select'
 
 function TeacherList () {
   return (
     <div id="page-teacher-list" className="container">
       <PageHeader title="Estes são os proffys disponíveis.">
         <form id="search-teachers">
-          <Input name="subject" label="Matéria" />
-          <Input type="select" name="week_day" label="Dia da semana" />
+          <Select
+            name="subject" 
+            label="Matéria" 
+            options={[
+              { value: 'Artes', label: 'Artes'},
+              { value: 'Biologia', label: 'Biologia'},
+              { value: 'Ciência', label: 'Ciência'},
+              { value: 'Matemática', label: 'Matemática'},
+              { value: 'Português', label: 'Português'},
+              { value: 'Química', label: 'Química'},
+              { value: 'Física', label: 'Física'}
+            ]} />
+          <Select 
+            name="week_day" 
+            label="Dia da semana" 
+            options={[
+              { value: '0', label: 'Domingo-feira'},
+              { value: '1', label: 'Segunda-feira'},
+              { value: '2', label: 'Terça-feira'},
+              { value: '3', label: 'Quarta-feira'},
+              { value: '4', label: 'Quinta-feira'},
+              { value: '5', label: 'Sexta-feira'},
+              { value: '6', label: 'Sábado'}
+            ]} />
           <Input type="time" name="time" label="Hora" />
         </form>
       </PageHeader>
