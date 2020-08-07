@@ -48,7 +48,7 @@ export default class ClassesController {
       cost,
       schedule
     } = request.body
-  
+
     const trx = await db.transaction()
   
     try {
@@ -68,7 +68,7 @@ export default class ClassesController {
       })
   
       const class_id = insertedClassesIds[0]
-  
+
       const classSchedule = schedule.map((scheduleItem: ScheduleItem) => {
         return {
           class_id,
@@ -78,10 +78,10 @@ export default class ClassesController {
         }
       })
   
-      await trx('class_schedule').insert(classSchedule)
+      await trx('classes_schedule').insert(classSchedule)
   
       await trx.commit()
-  
+
       return response.status(201).send()
     } catch (err) {
       await trx.rollback()
